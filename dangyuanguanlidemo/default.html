@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>白龙潭社区党员管理系统</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link href="assets/css/dpl-min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/bui-min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/main-min.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div class="header">
+    <div class="dl-title"><span class="">白龙潭社区党员管理系统</span></div>
+    <div class="dl-log">欢迎您，<span class="dl-log-user">赵书记</span>
+        <a href="###" title="退出系统" class="dl-log-quit">[退出]</a>
+    </div>
+</div>
+<div class="content">
+    <div class="dl-main-nav">
+        <ul id="J_Nav"  class="nav-list ks-clear">
+            <li class="nav-item dl-selected"><div class="nav-item-inner nav-storage">管理菜单</div></li>
+            <li class="nav-item"><div class="nav-item-inner nav-inventory">操作</div></li>
+        </ul>
+    </div>
+    <ul id="J_NavContent" class="dl-tab-conten">
+
+    </ul>
+
+</div>
+<script type="text/javascript" src="assets/js/jquery-1.8.1.min.js"></script>
+<script type="text/javascript" src="assets/js/bui-min.js"></script>
+<script type="text/javascript" src="assets/js/config-min.js"></script>
+<script>
+    BUI.use('common/main',function(){
+        var config = [{
+            id: 'menu',
+            menu: [{
+                text: '党员信息管理',
+                items: [
+                    {id: 'add-info', text: '添加党员信息', href: 'main/add-info.html'},
+                    {id: 'manage-info', text: '党员信息查询', href: 'main/manage-info.html'}
+                ]
+            }, {
+                text: '党员流出管理',
+                items: [
+                    {id: 'out', text: '添加党员流出', href: 'main/out.html'},
+                    {id: 'quick', text: '党员流出管理', href: 'main/outmanage.html'}
+                ]
+            },{
+                text:'发展党员管理',
+                items:[
+                    {id:'develop',text:'添加发展党员',href:'main/add-develop.html'},
+                    {id:'developmanage',text:'发展党员管理',href:'main/developmanage.html'}
+                ]
+            },{
+                text:'入党积极分子管理',
+                items:[
+                    {id:'activemember',text:'添加入党积极分子',href:'main/out.html'},
+                    {id:'activemembermanage',text:'管理入党积极分子',href:'main/outmanage.html'}
+                ]
+            },{
+                text:'优秀党员管理',
+                items:[
+                    {id:'goodmember',text:'添加添加党员',href:'main/add-goodmember.html'},
+                    {id:'goodmembermanage',text:'管理优秀党员',href:'main/goodmembermanage.html'}
+                ]
+            },{
+                text:'组这生活管理',
+                items:[
+                    {id:'partylife',text:'添加组织生活',href:'main/add-partylife.html'},
+                    {id:'partylifemanage',text:'管理组织生活',href:'main/partylifemanage.html'}
+                ]
+            },{
+                text:'奖惩信息管理',
+                items:[
+                    {id:'jiangcheng',text:'添加奖惩信息',href:'main/add-jiangcheng.html'},
+                    {id:'jiangchengmanage',text:'管理奖惩信息',href:'main/jiangchengmanage.html'}
+                ]
+            },{
+                text:'党费信息管理',
+                items:[
+                    {id:'money',text:'添加党费信息',href:'main/add-money.html'},
+                    {id:'moneymanage',text:'管理党费信息',href:'main/moneymanage.html'}
+                ]
+            }]
+        },{
+            id:'search',
+            menu:[{
+                text:'系统设置',
+                items:[
+                    {id:'operation',text:'修改密码',href:'operation/updatepw.html'},
+                    {id:'operation',text:'添加管理',href:'operation/add-admin.html'}
+
+                ]
+            }]
+        }];
+        new PageUtil.MainPage({
+            modulesConfig : config
+        });
+    });
+
+</script>
+</body>
+</html>
