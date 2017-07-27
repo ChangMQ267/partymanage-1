@@ -84,10 +84,9 @@
         </div>
         <div class="row">
             <div class="control-group span12">
-                <label class="control-label"><s>*</s>身份证号码：</label>
+                <label class="control-label"><s>*</s>年龄：</label>
                 <div class="controls">
-                    <input name="address" type="text" class="span8 span-width control-text"
-                           data-rules="{required:true}">
+                    <input name="sid" type="text" class="control-text" data-rules="{required:true}">
                 </div>
             </div>
             <div class="control-group span12">
@@ -99,248 +98,80 @@
         </div>
         <div class="row">
             <div class="control-group span12">
-                <label class="control-label"><s>*</s>家庭住址（写到门牌号）：</label>
-                <div class="controls">
-                    <input name="address" type="text" class="span8 span-width control-text"
-                           data-rules="{required:true}">
-                </div>
-            </div>
-        </div>
-        <hr/>
-        <h3>学历信息</h3>
-        <div class="row">
-            <div class="control-group span12">
                 <label class="control-label"><s>*</s>学历：</label>
                 <div class="controls">
-                    <input name="" type="text" class=" control-text  span8 span-width" data-rules="{required:true}">
+                    <input name="sid" type="text" class="control-text" data-rules="{required:true}">
                 </div>
             </div>
-            <div class="control-group span12">
-                <label class="control-label"><s>*</s>学位：</label>
-                <div class="controls">
-                    <input name="" type="text" class=" control-text  span8 span-width" data-rules="{required:true}">
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="control-group span12">
-                <label class="control-label"><s>*</s>专业：</label>
-                <div class="controls">
-                    <input name="" type="text" class=" control-text  span8 span-width" data-rules="{required:true}">
-                </div>
-            </div>
-            <div class="control-group span12">
-                <label class="control-label"><s>*</s>毕业学校：</label>
-                <div class="controls">
-                    <input name="" type="text" class=" control-text  span8 span-width" data-rules="{required:true}">
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="control-group span12">
-                <label class="control-label"><s>*</s>入学日期：</label>
-                <div class="controls bui-form-group" data-rules="{dateRange:true}">
-                    <input name="start" type="text" class="calendar" data-rules="{required:true}">
-                </div>
-            </div>
-            <div class="control-group span12">
-                <label class="control-label"><s>*</s>毕业日期：</label>
-                <div class="controls bui-form-group" data-rules="{dateRange:true}">
-                    <input name="start" type="text" class="calendar" data-rules="{required:true}">
-                </div>
-            </div>
-
-        </div>
-        <div class="row">
-            <div class="control-group span24">
-                <label class="control-label">备注：</label>
-                <div class="controls control-row4">
-                    <textarea name="" id="" class="span8 span-width"></textarea>
-                </div>
-            </div>
-        </div>
-        <hr/>
-        <h3>职务信息</h3>
-        <div class="row">
-            <div class="control-group span12">
-                <label class="control-label"><s>*</s>任职机构：</label>
-                <div class="controls">
-                    <input name="" type="text" class=" control-text  span8 span-width" data-rules="{required:true}">
-                </div>
-            </div>
-            <div class="control-group span12">
-                <label class="control-label"><s>*</s>党内（外）职务：</label>
-                <div class="controls">
-                    <input name="" type="text" class=" control-text  span8 span-width" data-rules="{required:true}">
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="control-group span12">
-                <label class="control-label"><s>*</s>职务级别：</label>
-                <div class="controls">
-                    <input name="" type="text" class=" control-text  span8 span-width" data-rules="{required:true}">
-                </div>
-            </div>
-            <div class="control-group span12">
-                <label class="control-label"><s>*</s>专业技术职务：</label>
-                <div class="controls">
-                    <input name="" type="text" class=" control-text  span8 span-width" data-rules="{required:true}">
-                </div>
-            </div>
-        </div>
-        <hr/>
-        <h3>党籍信息</h3>
-        <div class="row">
-            <div class="control-group span12">
-                <label class="control-label"><s>*</s>机构名称：</label>
-                <div class="controls">
-                    <input name="" type="text" class=" control-text  span8 span-width" data-rules="{required:true}">
-                </div>
-            </div>
-        </div>
-        <div class="row">
             <div class="control-group span12">
                 <label class="control-label"><s>*</s>入党日期：</label>
                 <div class="controls bui-form-group" data-rules="{dateRange:true}">
                     <input name="start" type="text" class="calendar" data-rules="{required:true}">
                 </div>
             </div>
+        </div>
+        <div class="row">
+            <div class="control-group12 span12">
+                <label class="control-label"><s>*</s>党员类型：</label>
+                <div class="controls">
+                    <select data-rules="{required:true}" name="type">
+                        <option value="">请选择</option>
+                        <option value="saler">正式党员</option>
+                        <option value="saler">发展党员</option>
+                        <option value="saler">预备党员</option>
+                    </select>
+                </div>
+            </div>
             <div class="control-group span12">
-                <label class="control-label"><s>*</s>何地何单位入党：</label>
+                <label class="control-label">流出地党组织名称：</label>
                 <div class="controls">
                     <input name="" type="text" class=" control-text  span8 span-width" data-rules="{required:true}">
                 </div>
             </div>
         </div>
         <div class="row">
-            <div class="control-group12 span12">
-                <label class="control-label"><s>*</s>加入类型：</label>
-                <div class="controls">
-                    <select data-rules="{required:true}" name="type">
-                        <option value="">请选择</option>
-                        <option value="saler">街道班子党员领导干部</option>
-                        <option value="large">街道机关党员</option>
-                        <option value="large">“村改居”社区中的党员</option>
-                        <option value="large">非“村改居”社区中的党员</option>
-                        <option value="large">街道所属企业单位党员</option>
-                        <option value="large">事业单位和市、区驻街道单位党员</option>
-                        <option value="large">教育战线上的党员</option>
-                        <option value="large">医疗卫生单位党员</option>
-                        <option value="large">新经济组织和新社会组织“两新”组织中的党员</option>
-                        <option value="large">离退休党员</option>
-                    </select>
-                </div>
-            </div>
             <div class="control-group span12">
-                <label class="control-label"><s>*</s>转正日期：</label>
-                <div class="controls bui-form-group" data-rules="{dateRange:true}">
-                    <input name="start" type="text" class="calendar" data-rules="{required:true}">
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="control-group span12">
-                <label class="control-label"><s>*</s>转正情况：</label>
+                <label class="control-label">流入地党组织名称：</label>
                 <div class="controls">
                     <input name="" type="text" class=" control-text  span8 span-width" data-rules="{required:true}">
                 </div>
             </div>
-            <div class="control-group12 span12">
-                <label class="control-label"><s>*</s>所在党支部：</label>
-                <div class="controls">
-                    <select data-rules="{required:true}" name="type">
-                        <option value="">请选择</option>
-                        <option value="saler">白龙潭社区党支部</option>
-                    </select>
-                </div>
-            </div>
-        </div>
-        <div class="row">
             <div class="control-group span12">
-                <label class="control-label"><s>*</s>进入支部日期：</label>
-                <div class="controls bui-form-group" data-rules="{dateRange:true}">
-                    <input name="start" type="text" class="calendar" data-rules="{required:true}">
-                </div>
-            </div>
-            <div class="control-group12 span12">
-                <label class="control-label"><s>*</s>进入支部类型：</label>
-                <div class="controls">
-                    <select data-rules="{required:true}" name="type">
-                        <option value="">请选择</option>
-                        <option value="saler">白龙潭社区党支部</option>
-                    </select>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="control-group span12">
-                <label class="control-label"><s>*</s>转离支部日期：</label>
-                <div class="controls bui-form-group" data-rules="{dateRange:true}">
-                    <input name="start" type="text" class="calendar" data-rules="{required:true}">
-                </div>
-            </div>
-            <div class="control-group12 span12">
-                <label class="control-label"><s>*</s>转离支部类型：</label>
-                <div class="controls">
-                    <select data-rules="{required:true}" name="type">
-                        <option value="">请选择</option>
-                        <option value="saler">白龙潭社区党支部</option>
-                    </select>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="control-group12 span12">
-                <label class="control-label"><s>*</s>党籍状态：</label>
-                <div class="controls">
-                    <select data-rules="{required:true}" name="type">
-                        <option value="">请选择</option>
-                        <option value="saler">正常</option>
-                        <option value="saler">已离</option>
-                    </select>
-                </div>
-            </div>
-            <div class="control-group12 span12">
-                <label class="control-label"><s>*</s>是否失联党员：</label>
-                <div class="controls">
-                    <select data-rules="{required:true}" name="type">
-                        <option value="">请选择</option>
-                        <option value="saler">是</option>
-                        <option value="saler">否</option>
-                    </select>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="control-group span12">
-                <label class="control-label">失联日期：</label>
-                <div class="controls bui-form-group" data-rules="{dateRange:true}">
-                    <input name="start" type="text" class="calendar" data-rules="{required:true}">
-                </div>
-            </div>
-            <div class="control-group12 span12">
-                <label class="control-label"><s>*</s>是否为流动党员：</label>
-                <div class="controls">
-                    <select data-rules="{required:true}" name="type">
-                        <option value="">请选择</option>
-                        <option value="saler">是</option>
-                        <option value="saler">否</option>
-                    </select>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="control-group span12">
-                <label class="control-label"><s>*</s>外出流向：</label>
+                <label class="control-label">现工作单位及职务：</label>
                 <div class="controls">
                     <input name="" type="text" class=" control-text  span8 span-width" data-rules="{required:true}">
                 </div>
             </div>
-            <div class="control-group span24">
-                <label class="control-label">备注：</label>
-                <div class="controls control-row4">
-                    <textarea name="" id="" class="span8 span-width"></textarea>
+        </div>
+        <div class="row">
+            <div class="control-group span12">
+                <label class="control-label">流动党员活动证编号：</label>
+                <div class="controls">
+                    <input name="sid" type="text" class="control-text " data-rules="{required:true}">
+                </div>
+            </div>
+        </div>
+        <hr/>
+        <h3>流出地党支部情况</h3>
+        <div class="row">
+            <div class="control-group span12">
+                <label class="control-label"><s>*</s>流出日期：</label>
+                <div class="controls bui-form-group" data-rules="{dateRange:true}">
+                    <input name="start" type="text" class="calendar" data-rules="{required:true}">
+                </div>
+            </div>
+            <div class="control-group span12">
+                <label class="control-label"><s>*</s>支部书记姓名：</label>
+                <div class="controls">
+                    <input name="" type="text" class=" control-text  " data-rules="{required:true}">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="control-group span12">
+                <label class="control-label">联系电话：</label>
+                <div class="controls">
+                    <input name="" type="text" class=" control-text  " data-rules="{required:true}">
                 </div>
             </div>
         </div>

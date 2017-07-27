@@ -1,249 +1,102 @@
 <!DOCTYPE html>
 <html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title>html 表格导出道</title>
-    <script language="JavaScript" type="text/javascript">
-        //第五种方法
-        var idTmr;
-        function  getExplorer() {
-            var explorer = window.navigator.userAgent ;
-            //ie
-            if (explorer.indexOf("MSIE") >= 0) {
-                return 'ie';
-            }
-            //firefox
-            else if (explorer.indexOf("Firefox") >= 0) {
-                return 'Firefox';
-            }
-            //Chrome
-            else if(explorer.indexOf("Chrome") >= 0){
-                return 'Chrome';
-            }
-            //Opera
-            else if(explorer.indexOf("Opera") >= 0){
-                return 'Opera';
-            }
-            //Safari
-            else if(explorer.indexOf("Safari") >= 0){
-                return 'Safari';
-            }
-        }
-        function method5(tableid) {
-            if(getExplorer()=='ie')
-            {
-                var curTbl = document.getElementById(tableid);
-                var oXL = new ActiveXObject("Excel.Application");
-                var oWB = oXL.Workbooks.Add();
-                var xlsheet = oWB.Worksheets(1);
-                var sel = document.body.createTextRange();
-                sel.moveToElementText(curTbl);
-                sel.select();
-                sel.execCommand("Copy");
-                xlsheet.Paste();
-                oXL.Visible = true;
+<head>
+    <meta charset="utf-8">
+    <title>柱状图</title>
 
-                try {
-                    var fname = oXL.Application.GetSaveAsFilename("Excel.xls", "Excel Spreadsheets (*.xls), *.xls");
-                } catch (e) {
-                    print("Nested catch caught " + e);
-                } finally {
-                    oWB.SaveAs(fname);
-                    oWB.Close(savechanges = false);
-                    oXL.Quit();
-                    oXL = null;
-                    idTmr = window.setInterval("Cleanup();", 1);
-                }
-
-            }
-            else
-            {
-                tableToExcel(tableid)
-            }
-        }
-        function Cleanup() {
-            window.clearInterval(idTmr);
-            CollectGarbage();
-        }
-        var tableToExcel = (function() {
-            var uri = 'data:application/vnd.ms-excel;base64,',
-                template = '<html><head><meta charset="UTF-8"></head><body><table>{table}</table></body></html>',
-                base64 = function(s) { return window.btoa(unescape(encodeURIComponent(s))) },
-                format = function(s, c) {
-                    return s.replace(/{(\w+)}/g,
-                        function(m, p) { return c[p]; }) }
-            return function(table, name) {
-                if (!table.nodeType) table = document.getElementById(table)
-                var ctx = {worksheet: name || 'Worksheet', table: table.innerHTML}
-                window.location.href = uri + base64(format(template, ctx))
-            }
-        })()
-
-    </script>
 </head>
 <body>
 
-<div >
-    <button type="button" onclick="method1('tableExcel')">导出Excel方法一</button>
-    <button type="button" onclick="method2('tableExcel')">导出Excel方法二</button>
-    <button type="button" onclick="getXlsFromTbl('tableExcel','myDiv')">导出Excel方法三</button>
-    <button type="button" onclick="method4('tableExcel')">导出Excel方法四</button>
-    <button type="button" onclick="method5('tableExcel')">导出Excel方法五</button>
-</div>
-<div id="myDiv">
-    <div id="tableExcel">
-    <div id="content" class="hide" >
-        <div class="span50 doc-content breadcrumb">
-            <table width="750" border="1" align="center" cellpadding="0" cellspacing="1" style="border-color: #dddddd;">
-                <tbody>
-                <tr>
-                    <td width="103" rowspan="6" align="center">基本信息</td>
-                    <td width="92" align="center" valign="middle">机构名称</td>
-                    <td width="133">白龙潭社区<br></td>
-                    <td width="110" align="center" valign="middle">党员编号</td>
-                    <td colspan="2">b001<br></td>
-                    <td width="103" rowspan="6"><img onerror=""
-                                                     src="../assets/img/1.jpg"
-                                                     width="103" height="120" border="0"></td>
-                </tr>
-                <tr>
-                    <td align="center" valign="middle">姓       名</td>
-                    <td>李四<br></td>
-                    <td align="center" valign="middle">性       别</td>
-                    <td colspan="2">男<br></td>
-                </tr>
-                <tr>
-                    <td align="center" valign="middle">出生日期</td>
-                    <td>1998-12-09<br></td>
-                    <td align="center" valign="middle">民       族</td>
-                    <td colspan="2">汉族<br></td>
-                </tr>
-                <tr>
-                    <td align="center" valign="middle">籍       贯</td>
-                    <td>昆明<br></td>
-                    <td align="center" valign="middle">身份证号码</td>
-                    <td>5308789648727443234<br></td>
-                </tr>
+<div class="demo-content">
 
-                </tbody>
-            </table>
+    <div class="detail-section">
+        <div id="canvas">
+
         </div>
-        <div class="span50 doc-content breadcrumb">
-            <table width="750" border="1" align="center" cellpadding="0" cellspacing="1" style="border-color: #dddddd;">
-                <tbody>
-                <tr>
-                    <td width="103" rowspan="6" align="center">学历信息</td>
-                    <td width="92" align="center" valign="middle">学历</td>
-                    <td width="133">本科<br></td>
-                    <td width="110" align="center" valign="middle">学位</td>
-                    <td colspan="2">博士<br></td>
-                </tr>
-                <tr>
-                    <td align="center" valign="middle">专业</td>
-                    <td>工商管理<br></td>
-                    <td align="center" valign="middle">毕业学校</td>
-                    <td colspan="2">云南师范大学<br></td>
-                </tr>
-                <tr>
-                    <td align="center" valign="middle">入学日期</td>
-                    <td>1998-12-09<br></td>
-                    <td align="center" valign="middle">毕业日期</td>
-                    <td>1998-12-09<br></td>
-                </tr>
-                <tr>
-                    <td align="center" valign="middle">备注</td>
-                    <td colspan="3">备注</td>
-
-                </tr>
-
-                </tbody>
-            </table>
-        </div>
-        <div class="span50 doc-content breadcrumb">
-            <table width="750" border="1" align="center" cellpadding="0" cellspacing="1" style="border-color: #dddddd;">
-                <tbody>
-                <tr>
-                    <td width="103" rowspan="6" align="center">职务信息</td>
-                    <td width="92" align="center" valign="middle">任职机构</td>
-                    <td width="133">白龙潭社区<br></td>
-                    <td width="110" align="center" valign="middle">党内（外）职务</td>
-                    <td colspan="2">党总支书记<br></td>
-                </tr>
-                <tr>
-                    <td align="center" valign="middle">职务级别</td>
-                    <td>书记<br></td>
-                    <td align="center" valign="middle">专业技术职务</td>
-                    <td colspan="2">无<br></td>
-                </tr>
-                <tr>
-                    <td align="center" valign="middle">入学日期</td>
-                    <td>1998-12-09<br></td>
-                    <td align="center" valign="middle">毕业日期</td>
-                    <td>1998-12-09<br></td>
-                </tr>
-                <tr>
-                    <td align="center" valign="middle">备注</td>
-                    <td colspan="3">备注</td>
-
-                </tr>
-
-                </tbody>
-            </table>
-        </div>
-        <div class="span50 doc-content breadcrumb">
-            <table width="750" border="1" align="center" cellpadding="0" cellspacing="1" style="border-color: #dddddd;">
-                <tbody>
-                <tr>
-                    <td width="103" rowspan="6" align="center">党籍信息</td>
-                    <td width="92" align="center" valign="middle">入党日期</td>
-                    <td width="133">2009-09-09<br></td>
-                    <td width="110" align="center" valign="middle">何地何单位入党</td>
-                    <td colspan="1">白龙潭社区<br></td>
-                    <td align="center" valign="middle">加入类型</td>
-                    <td>正式党员<br></td>
-                </tr>
-                <tr>
-                    <td align="center" valign="middle">转正日期</td>
-                    <td>2010-09-09<br></td>
-                    <td align="center" valign="middle">转正情况</td>
-                    <td>已转正<br></td>
-                    <td align="center" valign="middle">所在党支部</td>
-                    <td>白龙潭三党支部<br></td>
-                </tr>
-                <tr>
-                    <td align="center" valign="middle">进入支部日期</td>
-                    <td>2009-09-09<br></td>
-                    <td align="center" valign="middle">进入支部类型</td>
-                    <td>白龙潭三党支部<br></td>
-                    <td align="center" valign="middle">转离支部日期</td>
-                    <td>2009-09-09<br></td>
-                </tr>
-                <tr>
-                    <td align="center" valign="middle">转离支部类型</td>
-                    <td>白龙潭三党支部<br></td>
-                    <td align="center" valign="middle">党籍状态</td>
-                    <td>正常<br></td>
-                    <td align="center" valign="middle">是否失联党员</td>
-                    <td>否<br></td>
-                </tr>
-                <tr>
-                    <td align="center" valign="middle">失恋日期</td>
-                    <td>2012-12-12<br></td>
-                    <td align="center" valign="middle">是否流动党员</td>
-                    <td>否<br></td>
-                    <td align="center" valign="middle">外出流向</td>
-                    <td>2012-12-12<br></td>
-                </tr>
-                <tr>
-                    <td align="center" valign="middle">备注</td>
-                    <td colspan="5">备注</td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-        <button class="button button-danger " type="button" onclick="method5('tableExcel')"><i class="icon-white icon-file"></i>导出Excel文件打印</button>
     </div>
-</div>
+
+    <script src="http://g.tbcdn.cn/bui/acharts/1.0.18/acharts.js"></script>
+
+    <script type="text/javascript">
+        var chart = new AChart({
+            id : 'canvas',
+            theme : Chart.Theme.Smooth1,
+            width : 950,
+            height : 500,
+            plotCfg : {
+                margin : [50,50,80] //画板的边距
+            },
+            title : {
+                text : '柱状图'
+            },
+            subTitle : {
+                text : 'Source: WorldClimate.com'
+            },
+            xAxis : {
+                categories: [
+                    'Tokyo',
+                    'Jakarta',
+                    'New York',
+                    'Seoul',
+                    'Manila',
+                    'Mumbai',
+                    'Sao Paulo',
+                    'Mexico City',
+                    'Dehli',
+                    'Osaka',
+                    'Cairo',
+                    'Kolkata',
+                    'Los Angeles',
+                    'Shanghai',
+                    'Moscow',
+                    'Beijing',
+                    'Buenos Aires',
+                    'Guangzhou',
+                    'Shenzhen',
+                    'Istanbul'
+                ],
+                labels : {
+                    label : {
+                        rotate : -45,
+                        'text-anchor' : 'end'
+                    }
+                }
+            },
+            yAxis : {
+                min : 0
+            },
+            seriesOptions : { //设置多个序列共同的属性
+                /*columnCfg : { //公共的样式在此配置
+
+                 }*/
+            },
+            tooltip : {
+                valueSuffix : '￥'
+            },
+            series : [ {
+                name: 'Africa',
+                type : 'column',
+                data: [34.4, 21.8, {y : 20.1,attrs : {fill : '#ff0000'}}, 20, 19.6, 19.5, 19.1, 18.4, 18,
+                    17.3, 16.8, 15, 14.7, 14.5, 13.3, 12.8, 12.4, 11.8,
+                    11.7, 11.2],
+                labels : { //显示的文本信息
+                    label : {
+                        rotate : -90,
+                        y : 10,
+                        'fill' : '#fff',
+                        'text-anchor' : 'end',
+                        textShadow: '0 0 3px black',
+                        'font-size' : '14px'
+                    }
+                }
+
+            }]
+
+        });
+
+        chart.render();
+    </script>
+    <!-- script end -->
 </div>
 </body>
 </html>

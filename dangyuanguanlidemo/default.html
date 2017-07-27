@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -36,9 +37,11 @@
     BUI.use('common/main',function(){
         var config = [{
             id: 'menu',
+            homePage : 'allinfo',
             menu: [{
                 text: '党员信息管理',
                 items: [
+                    {id:'allinfo',text:'党员管理系统',href:'allinfo/allinfo.html',closeable : false},
                     {id: 'add-info', text: '添加党员信息', href: 'main/add-info.html'},
                     {id: 'manage-info', text: '党员信息查询', href: 'main/manage-info.html'}
                 ]
@@ -49,16 +52,16 @@
                     {id: 'quick', text: '党员流出管理', href: 'main/outmanage.html'}
                 ]
             },{
-                text:'发展党员管理',
+                text:'发/预党员管理',
                 items:[
                     {id:'develop',text:'添加发展党员',href:'main/add-develop.html'},
-                    {id:'developmanage',text:'发展党员管理',href:'main/developmanage.html'}
+                    {id:'developmanage',text:'发/预党员管理',href:'main/developmanage.html'}
                 ]
             },{
                 text:'入党积极分子管理',
                 items:[
-                    {id:'activemember',text:'添加入党积极分子',href:'main/out.html'},
-                    {id:'activemembermanage',text:'管理入党积极分子',href:'main/outmanage.html'}
+                    {id:'activemember',text:'添加入党积极分子',href:'main/add-activemember.html'},
+                    {id:'activemembermanage',text:'管理入党积极分子',href:'main/activemembermanage.html'}
                 ]
             },{
                 text:'优秀党员管理',
@@ -67,10 +70,10 @@
                     {id:'goodmembermanage',text:'管理优秀党员',href:'main/goodmembermanage.html'}
                 ]
             },{
-                text:'组这生活管理',
+                text:'困难党员管理',
                 items:[
-                    {id:'partylife',text:'添加组织生活',href:'main/add-partylife.html'},
-                    {id:'partylifemanage',text:'管理组织生活',href:'main/partylifemanage.html'}
+                    {id:'partylife',text:'添加困难党员',href:'main/add-partylife.html'},
+                    {id:'partylifemanage',text:'困难党员管理',href:'main/partylifemanage.html'}
                 ]
             },{
                 text:'奖惩信息管理',

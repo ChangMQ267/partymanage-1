@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>白龙潭社区党员管理系统</title>
+    <link href="../assets/css/dpl-min.css" rel="stylesheet" type="text/css"/>
+    <link href="../assets/css/bui-min.css" rel="stylesheet" type="text/css"/>
+    <link href="../assets/css/page-min.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="../assets/materialize/css/materialize.min.css" media="screen,projection"/>
+    <!-- Bootstrap Styles-->
+    <link href="../assets/css/bootstrap.css" rel="stylesheet"/>
+    <!-- Custom Styles-->
+    <link href="../assets/css/custom-styles.css" rel="stylesheet"/>
+</head>
+
+<body>
+<div class="header">
+    <h1 class="page-header">欢迎使用白龙潭社区党员管理系统</h1>
+</div>
+<div id="page-inner">
+
+
+    <div class="row">
+        <div class="col-xs-6 col-sm-6 col-md-3">
+
+            <div class="card horizontal cardIcon waves-effect waves-dark">
+                <div class="card-image red">
+                    <i class="glyphicon glyphicon-user"></i>
+                </div>
+                <div class="card-stacked">
+                    <div class="card-content">
+                        <h3>总党员</h3>
+                    </div>
+                    <div class="card-action">
+                        <strong>587人</strong>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-xs-6 col-sm-6 col-md-3">
+
+            <div class="card horizontal cardIcon waves-effect waves-dark">
+                <div class="card-image orange">
+                    <i class="glyphicon glyphicon-user"></i>
+                </div>
+                <div class="card-stacked">
+                    <div class="card-content">
+                        <h3>发展党员</h3>
+                    </div>
+                    <div class="card-action">
+                        <strong>234人</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-6 col-sm-6 col-md-3">
+
+            <div class="card horizontal cardIcon waves-effect waves-dark">
+                <div class="card-image Cyan">
+                    <i class="glyphicon glyphicon-user"></i>
+                </div>
+                <div class="card-stacked">
+                    <div class="card-content">
+                        <h3>预备党员</h3>
+                    </div>
+                    <div class="card-action">
+                        <strong>20人</strong>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-xs-6 col-sm-6 col-md-3">
+
+            <div class="card horizontal cardIcon waves-effect waves-dark">
+                <div class="card-image teal">
+                    <i class="glyphicon glyphicon-user"></i>
+                </div>
+                <div class="card-stacked">
+                    <div class="card-content">
+                        <h3>优秀党员</h3>
+                    </div>
+                    <div class="card-action">
+                        <strong>20人</strong>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-xs-6 col-sm-6 col-md-3">
+
+            <div class="card horizontal cardIcon waves-effect waves-dark">
+                <div class="card-image blue">
+                    <i class="glyphicon glyphicon-user"></i>
+                </div>
+                <div class="card-stacked">
+                    <div class="card-content">
+                        <h3>困难党员</h3>
+                    </div>
+                    <div class="card-action">
+                        <strong>121人</strong>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-xs-6 col-sm-6 col-md-3">
+
+            <div class="card horizontal cardIcon waves-effect waves-dark">
+                <div class="card-image green">
+                    <i class="glyphicon glyphicon-user"></i>
+                </div>
+                <div class="card-stacked">
+                    <div class="card-content">
+                        <h3>积极分子</h3>
+                    </div>
+                    <div class="card-action">
+                        <strong>20人</strong>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-xs-6 col-sm-6 col-md-3">
+
+            <div class="card horizontal cardIcon waves-effect waves-dark">
+                <div class="card-image ">
+                    <i class="glyphicon glyphicon-user"></i>
+                </div>
+                <div class="card-stacked">
+                    <div class="card-content">
+                        <h3>流动党员</h3>
+                    </div>
+                    <div class="card-action">
+                        <strong>20人</strong>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-xs-6 col-sm-6 col-md-3">
+
+            <div class="card horizontal cardIcon waves-effect waves-dark">
+                <div class="card-image pink">
+                    <i class="glyphicon glyphicon-user"></i>
+                </div>
+                <div class="card-stacked">
+                    <div class="card-content">
+                        <h3>失联党员</h3>
+                    </div>
+                    <div class="card-action">
+                        <strong>20人</strong>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-image">
+                    <div class="detail-section">
+                        <div id="canvas"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-md-6 col-sm-6 col-xs-6">
+            <div class="card">
+                <div class="card-action">
+                    <b>系统信息</b>
+                </div>
+                <div class="card-image">
+                    <div class="collection">
+                        <li class="collection-item">系统版本：<span class="pull-right">1.0（201708）</span></li>
+                        <li class="collection-item">主办单位：<span class="pull-right">白龙潭社区</span></li>
+                        <li class="collection-item">技术支持：<span class="pull-right"><a href="">云南师范大学信息学院创新创业实验室开发组</a></span></li>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-sm-6 col-xs-6">
+            <div class="card">
+                <div class="card-action">
+                    <b>系统信息</b>
+                </div>
+                <div class="card-image">
+                    <div class="collection">
+                        <li class="collection-item">系统语言：<span class="pull-right">简体中文</span></li>
+                        <li class="collection-item">开发团队：<span class="pull-right"><a href="">云南师范大学信息学院创新创业实验室开发组</a></span></li>
+                        <li class="collection-item">系统更新：<span class="pull-right"><a href="">点击更新</a></span></li>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="http://g.tbcdn.cn/bui/acharts/1.0.18/acharts.js"></script>
+
+<script type="text/javascript">
+    var chart = new AChart({
+        id: 'canvas',
+        theme: Chart.Theme.Smooth1,
+        width: 1200,
+        height: 300,
+        plotCfg: {
+            margin: [55, 55, 80] //画板的边距
+        },
+        title: {
+            text: '白龙潭社区党员人数增长图表'
+        },
+        xAxis: {
+            categories: [
+                '2000年',
+                '2001年',
+                '2002年',
+                '2003年',
+                '2004年',
+                '2005年',
+                '2006年',
+                '2007年',
+                '2008年',
+                '2009年',
+                '2010年',
+                '2011年',
+                '2012年',
+                '2013年',
+                '2014年',
+                '2015年',
+                '2016年',
+                '2017年'
+            ],
+            labels: {
+                label: {
+                    rotate: -45,
+                    'text-anchor': 'end'
+                }
+            }
+        },
+        yAxis: {
+            min: 0
+        },
+        seriesOptions: { //设置多个序列共同的属性
+            /*columnCfg : { //公共的样式在此配置
+
+             }*/
+        },
+        tooltip: {
+            valueSuffix: '￥'
+        },
+        series: [{
+            name: '年增长率',
+            type: 'column',
+            data: [67.4, 69.8, 72.1,73, 76.6, 79.5, 80.1, 81.4, 83,
+                87.3, 88.8, 89, 90.7, 92.5, 93.3, 92.8, 92.4, 91.8],
+            labels: { //显示的文本信息
+                label: {
+                    rotate: -90,
+                    y: 10,
+                    'fill': '#fff',
+                    'text-anchor': 'end',
+                    textShadow: '0 0 3px black',
+                    'font-size': '14px'
+                }
+            }
+
+        }]
+
+    });
+
+    chart.render();
+</script>
+<!-- script end -->
+</body>
+
+</html>
